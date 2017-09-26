@@ -1,0 +1,31 @@
+<div class="container">
+
+  <h1 class="h1">Details of our Venue Partners!</h1>
+  <ul>
+    <li>{{int_name}}</li>
+    <li [textContent]="binding_name"></li>;
+    
+  </ul>
+
+  <table class="table">
+    <tr>
+  <td *ngFor="let venue_detail of venue_details" style="text-align:center">
+  <div class="card" style="width: 20rem;" >
+      <img class="card-img-top" src={{venue_detail.photo}} height="250rem;" alt="Card image cap">
+      <div class="card-block">
+        <h4 class="card-title">{{venue_detail.venue_name}}</h4>
+        <div class="card-text">
+          <ul>
+            <li>Status: {{venue_detail.status}}</li>
+            <li>Booking Agent: {{venue_detail.agent}}</li>
+          </ul>
+        </div>
+        <a href="#" class="btn btn-primary">Proposal URL</a>
+      </div>
+    </div>
+  </td>
+  </tr>
+  </table>
+
+
+</div>
