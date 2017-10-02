@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<nav class="navbar navbar-inverse bg-inverse ">
+<!-- <nav class="navbar navbar-inverse bg-inverse ">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,7 +34,55 @@
 <br>
 <div>
 <app-venue-item></app-venue-item>
-<app-map></app-map>
+<app-map>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoicmFuZG8xIiwiYSI6ImNqODJhdDN1bjJsNWYzM28yOWQ5ZzF1YmoifQ._WnT9AT7f7FS8YH-3LM96Q';
+        var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v9'
+        });
+        </script>
+</app-map>
 
 </div>
+ -->
 
+<app-map></app-map>
+ 
+ <!-- this creates a google map on the page with the given lat/lng from -->
+ <!-- the component as the initial center of the map: -->
+
+
+
+ 
+ <div class="container">
+ <agm-map [latitude]="lat" [longitude]="lng">
+   <agm-marker 
+   *ngFor ="let m of markers"
+   [latitude]="m.lat" [longitude]="m.lng">
+   <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
+      <ng-template>
+          
+          <h1>{{m.name}}</h1>
+          <div class="card" style="width: 20rem;height:30rem;" >
+      <img class="card-img-top" src={{venue_detail.photo}} height="250rem;" alt="Card image cap">
+      <div class="card-block">
+        <h4 class="card-title">{{m.name}}</h4>
+        <div class="card-text">
+          <ul>
+            <li>Status: </li>
+            <li>Booking Agent:</li>
+          </ul>
+        </div>
+        <a href={{venue_detail.proposal_url}} class="btn btn-primary">Proposal URL</a>
+      </div>
+    </div>
+          
+          
+      </ng-template>
+    </agm-snazzy-info-window>
+  </agm-marker>
+ </agm-map>
+ </div>
+ <app-venue-item></app-venue-item>
+ 

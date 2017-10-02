@@ -4,6 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { VenueItemComponent } from './venue-item/venue-item.component';
 import { MapComponent } from './map/map.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { AgmCoreModule } from '@agm/core';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 
 @NgModule({
   declarations: [
@@ -12,7 +17,13 @@ import { MapComponent } from './map/map.component';
     MapComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CommonModule,
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyANmGF2zRV7g1QFZPVfaF_4g3L2EVMDIbU'
+    }),
+    AgmSnazzyInfoWindowModule
   ],
   providers: [],
   bootstrap: [AppComponent]

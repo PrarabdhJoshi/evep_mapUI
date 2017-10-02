@@ -10,7 +10,7 @@
   <table class="table">
     <tr>
   <td *ngFor="let venue_detail of venue_details" style="text-align:center">
-  <div class="card" style="width: 20rem;" >
+  <div class="card" style="width: 20rem;height:30rem;" >
       <img class="card-img-top" src={{venue_detail.photo}} height="250rem;" alt="Card image cap">
       <div class="card-block">
         <h4 class="card-title">{{venue_detail.venue_name}}</h4>
@@ -20,7 +20,7 @@
             <li>Booking Agent: {{venue_detail.agent}}</li>
           </ul>
         </div>
-        <a href="#" class="btn btn-primary">Proposal URL</a>
+        <a href={{venue_detail.proposal_url}} class="btn btn-primary">Proposal URL</a>
       </div>
     </div>
   </td>
@@ -29,3 +29,7 @@
 
 
 </div>
+
+<footer class="footer">
+    <p>© Company 2017</p>
+  </footer>

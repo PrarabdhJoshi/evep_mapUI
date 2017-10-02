@@ -2,13 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>First</title>
+  <title>Evp - Map UI</title>
   <base href="/">
 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://bootswatch.com/simplex/bootstrap.min.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.40.0/mapbox-gl.css' rel='stylesheet' />
+  
+  
 </head>
-<body>
+<body  ng-app="angular-mapbox-demo" style="background-image:url('http://www.eventplicity.com/wp-content/uploads/2015/07/banner-home.jpg?id=1658');background-repeat:no-repeat;background-attachment:fixed;height:100%;">
+  <!-- https://static.pexels.com/photos/265903/pexels-photo-265903.jpeg --> 
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="//api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js"></script>
+    <script src="angular-mapbox.js"></script>
+    <script>
+      var angularMapboxDemo = angular.module('angular-mapbox-demo', ['angular-mapbox']);
+    </script>
   <app-root></app-root>
 </body>
 </html>
